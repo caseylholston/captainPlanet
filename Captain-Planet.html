@@ -117,7 +117,7 @@
       });
       // Create a Copy
       $(".clone-button").on("click", function() {
-        $( ".captain-planet" ).clone().appendTo("body");
+        $( "body" ).append($( ".captain-planet" ).clone());
       });
 
       // Visibility Buttons
@@ -128,7 +128,11 @@
         $(".captain-planet").animate({ opacity: "0.05" });
       });
       $(".shield-button").on("click", function() {
-        $(".captain-planet").animate({ border : "5px"});
+        $(".captain-planet").css( "border-style", "solid");
+        $(".captain-planet").animate({ borderWidth: "5px"}, 'slow');
+        $(".captain-planet").animate({ borderColor: "#0e7796" }, 'slow');
+        $(".captain-planet").animate({ borderRadius: "25%"}, 'slow');
+        
     });
       // Move Buttons
       $(".up-button").on("click", function() {
